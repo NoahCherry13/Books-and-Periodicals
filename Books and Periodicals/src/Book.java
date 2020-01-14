@@ -19,4 +19,12 @@ public class Book extends Items{
 	public void print() {
 		System.out.println("Author: +"+ author +'\n'+ "Title: "+ title);
 	}
+
+	@Override
+	public int compareTo(Object o) throws ClassCastException{
+		if (o instanceof Periodical) {
+			throw new ClassCastException("Cannot compare book to periodical");
+		}
+		return 0;
+	}
 }

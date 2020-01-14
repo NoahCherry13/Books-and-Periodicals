@@ -15,9 +15,14 @@ public class Periodical extends Items {
 		return issue;
 	}
 
-	@Override
+	
 	public void print() {
-		// TODO Auto-generated method stub
 		
+	}
+
+	@Override
+	public int compareTo(Object o) {
+		// TODO Auto-generated method stub
+		return 0;
 	}
 }
