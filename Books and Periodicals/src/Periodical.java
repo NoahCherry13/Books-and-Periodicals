@@ -5,6 +5,7 @@ public class Periodical extends Items {
 	
 	public Periodical (int iss, String s) {
 		super(s);
+		issue = iss;
 	}
 	
 	public void setIssue(int i) {
@@ -16,13 +17,20 @@ public class Periodical extends Items {
 	}
 
 	
-	public void print() {
+	public String print() {
+		return ("Issue: " + issue + '\n' + "Title: " + title);
+
 		
 	}
 
 	@Override
-	public int compareTo(Object o) {
-		// TODO Auto-generated method stub
-		return 0;
+	public int compareTo(Items o) throws ClassCastException {
+		if (o instanceof Book) {
+			throw new ClassCastException("Cannot compare Periodical to Book");
+		}
+
+		Periodical p = (Periodical) o;
+
+		return issue-p.getIssue();
 	}
 }
